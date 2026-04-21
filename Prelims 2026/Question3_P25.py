@@ -30,7 +30,6 @@ class Tree:
         return self.FirstNode
 
     def Insert(self, NewNode):
-        #None is null node
         currentNode = self.FirstNode#node
         
         while True:
@@ -57,7 +56,7 @@ def OutputInOrder(thisNode):
     #None is null node
     if thisNode.GetLeft() != None: 
         OutputInOrder(thisNode.GetLeft())
-    if thisNode.GetLeft() == None:
+    if thisNode.GetLeft() == None or thisNode.GetRight() == None:
         print(thisNode.GetData().strip())
     if thisNode.GetRight() != None:
         OutputInOrder(thisNode.GetRight())
@@ -68,8 +67,8 @@ def OutputInOrder(thisNode):
 NodeArr = [] #array of type Node
 try:
     file = open("StudentNames.txt", 'r') 
-    for line in file: #line is tring
-        NodeArr.append(Node(line, None, None)) #None is a null node
+    for line in file: #line is string
+        NodeArr.append(Node(line) 
     
     file.close()
 
